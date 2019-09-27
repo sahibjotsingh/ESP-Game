@@ -40,13 +40,13 @@ Note : Make users and user profiles ie. myuser from the admin panel only. Also i
 * Authenticated
    * GET: /myuser/{myuserId}/get-task/ <br/>
         Returns a group of questions (primary images) with their corresponding secondary images.
-   * GET: /myuser/{myuserId}/track-game/match/{secondaryImageId} <br/>
+   * GET: /myuser/{myuserId}/track-game/match/{secondaryImageId}/ <br/>
         Marks true for secondaryImage being a match of its primary primary image
-   * GET: /myuser/{myuserId}/track-game/unmatch/{secondaryImageId} <br/>
+   * GET: /myuser/{myuserId}/track-game/unmatch/{secondaryImageId}/ <br/>
         Marks false for secondaryImage being a match of its primary image
    * GET: /myuser/{myuserId}/end-task/ <br/>
         Submit answers for questions of this task. 
-   * GET: /myuser/{myuserId}/end-game <br/>
+   * GET: /myuser/{myuserId}/end-game/ <br/>
         End the game ie. discard the responses for questions of task undertaken (if any).
         
 ## Roadmap
