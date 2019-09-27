@@ -202,19 +202,3 @@ class MyUserViewSet(viewsets.ModelViewSet):
 				task.delete()
 		finally:
 			return Response({"status": "ok"}, status=status.HTTP_200_OK)
-
-	# Logout
-	@action(detail=True, methods=['get'], url_path='logout')
-	def logout(self, request, pk=None, si_pk=None):
-		try:
-			task = Task.objects.get(locked_by=self.request.user)	
-
-			if task is not None:
-				primary_images = PrimaryImage.objects.filter(task=task)
-				for primary_image in primary_images:
-					secondary_images = SecondaryImage.objects.filter(primary_image=primary_image)
-					for secondary_image in secondary_images:
-						UserResponse.objects.get(image=secondary_image, user=self.request.user).delete()
-				task.delete()
-		finally:
-			return Response({"status": "ok"}, status=status.HTTP_200_OK)
