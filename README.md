@@ -22,7 +22,6 @@ Secondary images for a question are > 1.
 3. If a question receives 2 answers, it is not asked to any other user.
 4. A question will not be asked to a user who has already answered it in the past correctly or even incorrectly. By correctly we mean that its answer matched with that of another user for that question and vice versa.
 5. Matching answers are kept in the system and question has reached consensus. Therefore it will not be shown to any other user later. Non matching answers are discarded from the system  and will be shown to future users.
-6. A user has to mark all the answers properly for questions of the task he/she has undertaken. Incomplete responses are discarded.
 
 ## Setup
 1. git clone https://github.com/sahibjotsingh/ESP-Game
@@ -36,7 +35,7 @@ Secondary images for a question are > 1.
 
 Note : Make users and user profiles ie. myuser from the admin panel only. Also insert primary images and their corresponding secondary images through admin panel. A dataset with 6 primary images and their secondary images (2 each) is already populated.
 
-## Endpoints 
+## Primary Endpoints 
 * Authenticated
    * GET: /myuser/{myuserId}/get-task/ <br/>
         Returns a group of questions (primary images) with their corresponding secondary images.
@@ -50,5 +49,5 @@ Note : Make users and user profiles ie. myuser from the admin panel only. Also i
         End the game ie. discard the responses for questions of task undertaken (if any).
         
 ## Roadmap
-1. Use Django Channels (websocket)
+1. Use Django Channels (WebSockets)
 2. Implement Silent Authentication
